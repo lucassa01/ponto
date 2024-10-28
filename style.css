@@ -1,0 +1,16 @@
+body {
+    font-family: Arial, sans-serif;
+}
+#datetime {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+.past {
+    color: gray;
+}
+.edited {
+    font-style: italic;
+}
+.observation {
+    font-weight: bold;
+}
