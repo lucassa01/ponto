@@ -1,18 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ponto de Controle de Ponto</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Sistema de Controle de Ponto</title>
 </head>
 <body>
-    <div id="datetime"></div>
-    <button onclick="registerPoint('entrada')">Registrar Entrada</button>
-    <button onclick="registerPoint('saida')">Registrar Saída</button>
-    <button onclick="registerPoint('intervalo')">Registrar Intervalo</button>
-    <input type="text" id="observation" placeholder="Adicionar Observação">
-    <input type="file" id="justification" accept=".pdf,.jpg,.jpeg,.png">
-    <script src="./main.js"></script>
+    <header>
+        <h1>Controle de Ponto</h1>
+        <div id="currentDateTime"></div>
+    </header>
+    
+    <main>
+        <section id="registro">
+            <h2>Registrar Ponto</h2>
+            <form id="registroForm">
+                <input type="datetime-local" id="registroDataHora" required>
+                <button type="submit">Registrar Entrada/Saída</button>
+                <input type="text" id="justificativa" placeholder="Justificativa (opcional)">
+                <input type="file" id="uploadArquivo">
+                <button type="button" id="registrarIntervalo">Registrar Intervalo</button>
+                <button type="button" id="visualizarRelatorio">Visualizar Relatório</button>
+            </form>
+        </section>
+        
+        <section id="relatorio">
+            <h2>Relatório de Marcação</h2>
+            <div id="relatorioContainer"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
